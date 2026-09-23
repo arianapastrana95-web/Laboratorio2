@@ -1,27 +1,38 @@
 def mostrar_menu():
+    """Req 4: Muestra el menú principal en pantalla (Función sin retorno)."""
     
     print("\n--- SISTEMA DE ORIENTACIÓN Y REGISTRO ---")
     print("Módulo de Soporte Académico")
     print("-----------------------------------------")
 
 def asignar_prioridad(tipo_consulta):
+    """Req 5: Calcula y retorna la prioridad ('Alta' o 'Media') según el tipo de consulta.
+    Req 8: Recibe parámetros por valor de forma aislada."""
     # Req 8: Recibe el parámetro por valor de forma aislada
+
     if tipo_consulta in ["pagos", "plataforma"]:
         return "Alta"
     else:
         return "Bajo"
     
 def validar_texto_obligatorio(texto):
+    """Req 6: Valida si una cadena de texto no está vacía. Retorna un valor booleano.
+    Req 8: Recibe el parámetro por valor localmente."""
     # Req 8: Recibe el texto a validar localmente sin usar globales
+
     return texto.strip() != ""
 
 def validar_codigo_estudiante(codigo):
+    """Req 2: Valida que el código de estudiante tenga una longitud mínima de 5 caracteres."""
     if not validar_texto_obligatorio(codigo):
         return False
     return len(codigo.strip()) >= 5
 
 def mostrar_resumen(codigo, nombre, consulta, descripcion, prioridad):
+    """Req 7: Imprime un bloque estructurado con el resumen de la solicitud registrada.
+    Req 8: Recibe los 5 datos de la atención de forma independiente por parámetro."""
     # Req 8: Recibe los 5 datos de la atención como parámetros independientes
+
     print("\n=========================================")
     print("        RESUMEN DE LA SOLICITUD          ")
     print("=========================================")
@@ -31,7 +42,9 @@ def mostrar_resumen(codigo, nombre, consulta, descripcion, prioridad):
     print(f"Prioridad:     {prioridad}")
     print(f"Descripción:   {descripcion}")
     print("=========================================\n")
+
 def ejecutar_pruebas():
+    """Req 11: Ejecuta y valida automáticamente las 5 pruebas de sistema obligatorias."""
     
     print("\n========== EJECUTANDO PRUEBAS DE SISTEMA ==========")
     
@@ -53,9 +66,9 @@ def ejecutar_pruebas():
     print("===================================================\n")
 
 def principal():
-
+# Llamamos a la función sin retorno del menú
     mostrar_menu()
-
+# Bucle para solicitudes múltiples
     for i in range(1, 4):
         print(f"\n>>> REGISTRO DE LA SOLICITUD N° {i} <<<")
 

@@ -9,6 +9,21 @@ def asignar_prioridad(tipo_consulta):
         return "Alta"
     else:
         return "Media"
+def validar_texto_obligatorio(texto):
+   
+    return texto.strip() != ""
+
+def mostrar_resumen(codigo, nombre, consulta, descripcion, prioridad):
+    
+    print("\n=========================================")
+    print("        RESUMEN DE LA SOLICITUD          ")
+    print("=========================================")
+    print(f"Código Alumno: {codigo}")
+    print(f"Estudiante:    {nombre}")
+    print(f"Consulta:      {consulta.capitalize()}")
+    print(f"Prioridad:     {prioridad}")
+    print(f"Descripción:   {descripcion}")
+    print("=========================================\n")
 
 def principal():
 
@@ -36,8 +51,9 @@ def principal():
     while not validar_texto_obligatorio(descripcion_breve):
         print("Error: La descripción breve es obligatoria.")
         descripcion_breve = input("Descripción breve de la solicitud: ")
-        
+
     prioridad = asignar_prioridad(tipo_consulta)
+    mostrar_resumen(codigo_estudiante, nombre_estudiante, tipo_consulta, descripcion_breve, prioridad)
 
 if __name__ == "__main__":
     principal()

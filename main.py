@@ -5,16 +5,17 @@ def mostrar_menu():
     print("-----------------------------------------")
 
 def asignar_prioridad(tipo_consulta):
+    # Req 8: Recibe el parámetro por valor de forma aislada
     if tipo_consulta in ["pagos", "plataforma"]:
         return "Alta"
     else:
         return "Media"
 def validar_texto_obligatorio(texto):
-   
+    # Req 8: Recibe el texto a validar localmente sin usar globales
     return texto.strip() != ""
 
 def mostrar_resumen(codigo, nombre, consulta, descripcion, prioridad):
-    
+    # Req 8: Recibe los 5 datos de la atención como parámetros independientes
     print("\n=========================================")
     print("        RESUMEN DE LA SOLICITUD          ")
     print("=========================================")

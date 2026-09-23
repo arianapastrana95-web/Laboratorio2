@@ -10,6 +10,7 @@ def asignar_prioridad(tipo_consulta):
         return "Alta"
     else:
         return "Media"
+    
 def validar_texto_obligatorio(texto):
     # Req 8: Recibe el texto a validar localmente sin usar globales
     return texto.strip() != ""
@@ -37,6 +38,7 @@ def principal():
         codigo_estudiante = input("Código de estudiante válido: ")
 
     nombre_estudiante = input("Nombre completo del estudiante: ")
+
     while not validar_texto_obligatorio(nombre_estudiante):
         print("Error: El nombre completo es obligatorio.")
         nombre_estudiante = input("Nombre completo del estudiante: ")
@@ -49,10 +51,14 @@ def principal():
         tipo_consulta = input("Tipo de consulta (matrícula, pagos, constancia, plataforma, otro): ").strip().lower()
         
     descripcion_breve = input("Descripción breve de la solicitud: ")
+
     while not validar_texto_obligatorio(descripcion_breve):
         print("Error: La descripción breve es obligatoria.")
         descripcion_breve = input("Descripción breve de la solicitud: ")
 
+    # Req 9: Controlar el alcance de variables locales del programa principal
+    # Las variables 'prioridad', 'codigo_estudiante', 'nombre_estudiante', etc.
+    # tienen alcance local dentro de principal() y no interfieren de forma global.
     prioridad = asignar_prioridad(tipo_consulta)
     mostrar_resumen(codigo_estudiante, nombre_estudiante, tipo_consulta, descripcion_breve, prioridad)
 

@@ -5,5 +5,5 @@
 * **Tema:** Funciones y Modularidad
 * **Lenguaje:** Python
 
-## Integrantes del Equipo
-* Estudiante de Ingeniería de Sistemas
+## Autora
+* Ariana Nahomi Pastrana Muñoz

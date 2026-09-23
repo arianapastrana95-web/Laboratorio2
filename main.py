@@ -1,4 +1,12 @@
+def mostrar_menu():
+    
+    print("\n--- SISTEMA DE ORIENTACIÓN Y REGISTRO ---")
+    print("Módulo de Soporte Académico")
+    print("-----------------------------------------")
+
 def principal():
+    
+    mostrar_menu()
     
     codigo_estudiante = input("Código de estudiante: ")
     while codigo_estudiante.strip() == "" or len(codigo_estudiante.strip()) < 5:
@@ -6,7 +14,7 @@ def principal():
         codigo_estudiante = input("Código de estudiante válido: ")
 
     nombre_estudiante = input("Nombre completo del estudiante: ")
-    
+
     tipo_consulta = input("Tipo de consulta (matrícula, pagos, constancia, plataforma, otro): ")
     descripcion_breve = input("Descripción breve de la solicitud: ")
 

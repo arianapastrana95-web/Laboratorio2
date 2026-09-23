@@ -21,6 +21,9 @@ def principal():
         codigo_estudiante = input("Código de estudiante válido: ")
 
     nombre_estudiante = input("Nombre completo del estudiante: ")
+    while not validar_texto_obligatorio(nombre_estudiante):
+        print("Error: El nombre completo es obligatorio.")
+        nombre_estudiante = input("Nombre completo del estudiante: ")
 
     consultas_validas = ["matrícula", "pagos", "constancia", "plataforma", "otro"]
     tipo_consulta = input("Tipo de consulta (matrícula, pagos, constancia, plataforma, otro): ").strip().lower()
@@ -30,6 +33,10 @@ def principal():
         tipo_consulta = input("Tipo de consulta (matrícula, pagos, constancia, plataforma, otro): ").strip().lower()
         
     descripcion_breve = input("Descripción breve de la solicitud: ")
+    while not validar_texto_obligatorio(descripcion_breve):
+        print("Error: La descripción breve es obligatoria.")
+        descripcion_breve = input("Descripción breve de la solicitud: ")
+        
     prioridad = asignar_prioridad(tipo_consulta)
 
 if __name__ == "__main__":
